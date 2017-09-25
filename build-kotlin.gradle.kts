@@ -47,9 +47,9 @@ configure< CfPluginExtension> {
     space = "pcfdev-space"
 
     //App Details
-    name = "cf-show-env"
-    hostName = "cf-show-env"
-    filePath = "build/libs/cf-show-env-1.0.0-M1.jar"
+    name = "cf-gradle-plugin-demo"
+    hostName = "cf-gradle-plugin-demo"
+    filePath = "build/libs/cf-gradle-plugin-demo-1.0-SNAPSHOT.jar"
     path = ""
     domain = "local.pcfdev.io"
     instances = 2
