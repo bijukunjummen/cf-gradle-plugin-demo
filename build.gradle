@@ -1,7 +1,7 @@
 buildscript {
     ext {
-        springBootVersion = '1.5.7.RELEASE'
-        cfAppVersion = '1.0.10'
+        springBootVersion = '1.5.9.RELEASE'
+        cfAppVersion = '2.1.0'
     }
     repositories {
 //        mavenLocal()
@@ -13,7 +13,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-//        classpath("com.github.pivotalservices:ya-cf-app-gradle-plugin:${cfAppVersion}")
+        classpath("com.github.pivotalservices:ya-cf-app-gradle-plugin:${cfAppVersion}")
     }
 }
 
@@ -22,7 +22,7 @@ plugins {
 }
 
 plugins {
-	id "com.github.pivotalservices.cf-app" version "1.0.9"
+	id "com.github.pivotalservices.cf-app" version "2.1.0"
 }
 
 version = "1.0-SNAPSHOT"
@@ -45,7 +45,7 @@ cfConfig {
 
     //App Details
     name = "cf-gradle-plugin-demo"
-    hostName = "cf-gradle-plugin-demo"
+    host = "cf-gradle-plugin-demo"
     filePath = "build/libs/cf-gradle-plugin-demo-1.0-SNAPSHOT.jar"
     path = ""
     domain = "local.pcfdev.io"
