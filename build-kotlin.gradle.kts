@@ -16,7 +16,7 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.4-eap-69")
         classpath("com.github.jengelman.gradle.plugins:shadow:2.0.1")
         classpath("org.junit.platform:junit-platform-gradle-plugin:1.0.0-RC2")
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
     }
 }
 
@@ -28,14 +28,13 @@ repositories {
 }
 
 plugins {
-    id("com.github.pivotalservices.cf-app").version("1.0.9")
+    id("com.github.pivotalservices.cf-app").version("2.1.0")
+    java
 }
 
 apply {
     plugin("kotlin")
     plugin("org.springframework.boot")
-    plugin("java")
-    from("gradle/gatling.gradle")
 }
 
 configure< CfPluginExtension> {
@@ -48,7 +47,7 @@ configure< CfPluginExtension> {
 
     //App Details
     name = "cf-gradle-plugin-demo"
-    hostName = "cf-gradle-plugin-demo"
+    host = "cf-gradle-plugin-demo"
     filePath = "build/libs/cf-gradle-plugin-demo-1.0-SNAPSHOT.jar"
     path = ""
     domain = "local.pcfdev.io"
